@@ -1,0 +1,11 @@
+<div class="dialog w-full h-full relative">
+    <h2 *ngIf="title"
+        mat-dialog-title>{{ title | translate }}</h2>
+    <div matRipple
+         class="close-button absolute cursor-pointer"
+         (click)="close.emit()">
+        <mat-icon class="icon">close</mat-icon>
+    </div>
+    <div id="dialog-content"
+         class="dialog-content w-full h-full"></div>
+</div>

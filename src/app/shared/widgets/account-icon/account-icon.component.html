@@ -1,0 +1,6 @@
+<div class="account-icon">
+    <app-circle-image *ngIf="user?.picture"
+                      [image]="user?.picture"></app-circle-image>
+    <mat-icon *ngIf="!user"
+              class="icon">account_circle</mat-icon>
+</div>

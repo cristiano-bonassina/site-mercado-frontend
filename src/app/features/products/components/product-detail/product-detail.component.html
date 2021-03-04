@@ -1,0 +1,25 @@
+<div class="product-detail flex flex-col md:w-80">
+       <ng-container *ngIf="product">
+              <div class="flex flex-col w-full">
+                     <app-image-picker [(image)]="product.image">
+                     </app-image-picker>
+                     <div class="flex flex-col w-full">
+                            <app-text-input class="product-detail-name mt-2"
+                                            [(ngModel)]="product.name"
+                                            placeholder="nome do produto">
+                            </app-text-input>
+                            <app-currency-input class="product-detail-price mt-2 md:w-1/2"
+                                                [(ngModel)]="product.price"
+                                                placeholder="valor de venda">
+                            </app-currency-input>
+                            <div class="mt-8">
+                                   <app-loading-button mat-raised-button
+                                                       (click)="saveProductChanges()"
+                                                       [showWorkingIndicator]="isSavingChanges"
+                                                       text="Salvar">
+                                   </app-loading-button>
+                            </div>
+                     </div>
+              </div>
+       </ng-container>
+</div>

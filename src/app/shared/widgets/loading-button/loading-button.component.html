@@ -1,0 +1,15 @@
+<div class="w-full h-9"
+     (click)="onClick($event)">
+    <button mat-raised-button
+            class="w-full h-full"
+            color="primary">
+        <div class="w-full h-full flex justify-center items-center">
+            <ng-container *ngIf="text && !showWorkingIndicator">{{ text | translate }}</ng-container>
+            <mat-spinner *ngIf="showWorkingIndicator"
+                         class="h-4 w-4"
+                         color="accent"
+                         diameter=21
+                         strokeWidth=3></mat-spinner>
+        </div>
+    </button>
+</div>

@@ -1,0 +1,14 @@
+<div class="image-picker flex items-center text-center cursor-pointer overflow-hidden"
+     (click)="input.click()">
+     <div *ngIf="!image"
+          class="w-full h-full p-6 m-2 border border-dashed border-gray-300">
+          <span>{{ 'imagePickerComponent.pickImage' | translate}}</span>
+     </div>
+     <img *ngIf="image"
+          [src]="image | base64 | resourceUrl">
+     <input #input
+            hidden
+            type="file"
+            accept="image/*"
+            (change)="selectImageFile($event)">
+</div>

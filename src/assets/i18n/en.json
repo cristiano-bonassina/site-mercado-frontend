@@ -1,0 +1,27 @@
+{
+  "brand": "site.mercado",
+  "imagePickerComponent": {
+    "pickImage": "Clique para selecionar uma imagem"
+  },
+  "loginComponent": {
+    "title": "Login",
+    "username": "login",
+    "password": "password",
+    "signin": "Entrar",
+    "loginError": "Não foi possível efetuar o login",
+    "logout": "Sair"
+  },
+  "productsComponent": {
+    "noRegisteredProducts": "Nenhum produto cadastrado",
+    "noProductsFound": "Nenhum produto encontrado",
+    "errorLoadingProducts": "Não foi possível carregar a lista de produtos",
+    "retry": "Tentar novamente"
+  },
+  "productDialog": {
+    "addTitle": "Inclusão de produto",
+    "editTitle": "Edição de produto"
+  },
+  "footer": {
+    "copyright": "Todos os direitos reservados"
+  }
+}

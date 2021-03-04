@@ -1,0 +1,12 @@
+.delete-button {
+  color: #767676;
+  cursor: pointer;
+  height: 24px;
+  transition: color 100ms ease-in;
+  user-select: none;
+  width: 24px;
+
+  &:hover {
+    color: red;
+  }
+}

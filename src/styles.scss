@@ -1,0 +1,39 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~tailwindcss/base";
+@import "~tailwindcss/components";
+@import "~tailwindcss/utilities";
+@import "_palette";
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: #f1f1f1;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:focus,
+*:hover {
+  outline: none !important;
+}
+
+h2 {
+  font-family: "Roboto Condensed" !important;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold !important;
+}
+
+p {
+  font-size: 1rem !important;
+}

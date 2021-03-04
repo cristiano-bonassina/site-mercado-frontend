@@ -1,0 +1,22 @@
+<mat-card matRipple
+          class="product-card relative cursor-pointer">
+    <div class="product-card inline-grid">
+        <div class="delete-button absolute right-4 top-4"
+             [style.opacity]="isMobile ? 1 : 0">
+            <app-delete-button (click)="onRemoveButtonClick($event)"></app-delete-button>
+        </div>
+        <div square
+             class="product-image block overflow-hidden">
+            <img class="w-full h-full object-cover"
+                 [src]="product?.image | base64 | resourceUrl">
+        </div>
+        <span class="product-name truncate mt-2">
+            {{ product?.name }}
+        </span>
+        <div class="product-price">
+            {{ product?.price | userCurrency}}
+        </div>
+    </div>
+    <app-loading-overlay *ngIf="showLoadingOverlay"
+                         class="absolute w-full h-full top-0 left-0 z-10"></app-loading-overlay>
+</mat-card>

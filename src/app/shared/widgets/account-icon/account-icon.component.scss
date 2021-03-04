@@ -1,0 +1,11 @@
+@import "_colors";
+
+.account-icon {
+  cursor: pointer;
+  .icon {
+    color: $gray;
+    font-size: 2rem;
+    line-height: 2.75rem;
+    width: 2rem;
+  }
+}

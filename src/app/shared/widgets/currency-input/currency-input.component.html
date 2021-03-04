@@ -1,0 +1,8 @@
+<div>
+    <input #input
+           inputmode="numeric"
+           [placeholder]="placeholder"
+           [(ngModel)]="value"
+           (keypress)="onKeyPress($event)"
+           (ngModelChange)="onValueChange()">
+</div>

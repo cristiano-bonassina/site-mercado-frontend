@@ -1,0 +1,5 @@
+{
+  "workbench.colorCustomizations": {},
+  "html.format.wrapAttributes": "force-aligned",
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

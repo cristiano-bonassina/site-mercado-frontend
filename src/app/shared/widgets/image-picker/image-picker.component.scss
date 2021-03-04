@@ -1,0 +1,12 @@
+@import "colors";
+
+.image-picker {
+  background-color: $control;
+  border-radius: 0.25rem;
+  span {
+    color: #9ca3af;
+  }
+  &:hover {
+    background-color: #e7eaeb;
+  }
+}

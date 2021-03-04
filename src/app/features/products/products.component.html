@@ -1,0 +1,41 @@
+<div class="products flex h-full overflow-hidden justify-center">
+    <ng-container *ngIf="!isSearchingProducts && !errorLoadingProducts">
+        <div *ngIf="products.length"
+             class="products-grid flex justify-center content-start overflow-auto h-full w-full max-w-7xl py-4 md:py-16"
+             fxFlex
+             fxLayout="row wrap"
+             fxLayoutGap="1rem grid">
+            <ng-container *ngFor="let product of products">
+                <app-product-card #productCard
+                                  fxFlex="0 1 calc(50% - 1rem)"
+                                  fxFlex.gt-xs="0 1 calc(33.33% - 1rem)"
+                                  fxFlex.gt-sm="0 1 calc(25% - 1rem)"
+                                  fxFlex.gt-md="0 1 calc(20% - 1rem)"
+                                  [product]="product"
+                                  (click)="editProduct(productCard, product)"
+                                  (removeProduct)="removeProduct(productCard, product)">
+                </app-product-card>
+            </ng-container>
+        </div>
+        <div class="absolute bottom-8 right-8">
+            <button mat-fab
+                    color="primary"
+                    aria-label="Example icon button with a delete icon"
+                    (click)="addProduct()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+    </ng-container>
+    <app-empty-state *ngIf="!isSearchingProducts && !products.length"
+                     class="self-center"
+                     [message]="emptyMessage"></app-empty-state>
+    <app-empty-state *ngIf="errorLoadingProducts"
+                     class="self-center"
+                     [action]="'productsComponent.retry'"
+                     [message]="'productsComponent.errorLoadingProducts'"
+                     (actionClick)="searchProducts()"></app-empty-state>
+    <mat-spinner *ngIf="isSearchingProducts"
+                 class="self-center"
+                 diameter=40></mat-spinner>
+</div>
+<router-outlet></router-outlet>

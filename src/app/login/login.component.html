@@ -1,0 +1,21 @@
+<div>
+    <h2 mat-dialog-title>{{ 'loginComponent.title' | translate }}</h2>
+    <mat-dialog-content>
+        <div class="w-60 p-1"
+             fxFlex
+             fxLayout="column">
+            <app-login-logo class="pb-12"></app-login-logo>
+            <app-text-input [(ngModel)]="username"
+                            [placeholder]="'loginComponent.username' | translate"></app-text-input>
+            <app-text-input class="mt-2"
+                            [(ngModel)]="password"
+                            [placeholder]="'loginComponent.password' | translate"></app-text-input>
+            <app-error-message class="w-60 mt-1"
+                               [message]="errorMessage"></app-error-message>
+            <app-loading-button class="mt-8"
+                                [showWorkingIndicator]="loginInProgress"
+                                [text]="'loginComponent.signin' | translate"
+                                (click)="login()"></app-loading-button>
+        </div>
+    </mat-dialog-content>
+</div>

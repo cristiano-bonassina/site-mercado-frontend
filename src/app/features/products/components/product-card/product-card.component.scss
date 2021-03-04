@@ -1,0 +1,14 @@
+.product-card {
+  .delete-button {
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    border-radius: 0.5rem;
+    opacity: 0;
+    padding: 0.5rem;
+    transition: opacity 0.2s linear;
+  }
+  &:hover {
+    .delete-button {
+      opacity: 1 !important;
+    }
+  }
+}
