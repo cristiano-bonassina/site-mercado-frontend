@@ -32,6 +32,7 @@ export class MainComponent implements AfterViewInit {
         this.mainSearchService.search.next(searchTerm);
       });
     });
+    this.verifyCurrentUserLogin();
   }
 
   public login() {
@@ -43,5 +44,12 @@ export class MainComponent implements AfterViewInit {
 
   public logout() {
     this.loginService.logout().then(() => this.login());
+  }
+
+  private verifyCurrentUserLogin() {
+    const currentUser = this.loginService.loginCompleted.value;
+    if (!currentUser) {
+      this.login();
+    }
   }
 }
