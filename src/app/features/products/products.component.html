@@ -28,7 +28,7 @@
             </div>
         </div>
     </ng-container>
-    <app-empty-state *ngIf="!isSearchingProducts && !products.length"
+    <app-empty-state *ngIf="!errorLoadingProducts && !isSearchingProducts && !products.length"
                      class="self-center"
                      [message]="emptyMessage"></app-empty-state>
     <app-empty-state *ngIf="errorLoadingProducts"
