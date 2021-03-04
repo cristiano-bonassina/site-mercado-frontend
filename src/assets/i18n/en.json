@@ -3,6 +3,9 @@
   "imagePickerComponent": {
     "pickImage": "Clique para selecionar uma imagem"
   },
+  "toolbarSearchInputComponent": {
+    "placeholder": "Buscar produtos, marcas e muito mais…"
+  },
   "loginComponent": {
     "title": "Login",
     "username": "login",
