@@ -1,4 +1,5 @@
 export const environment = {
-  host: "https://site-mercado.azurewebsites.net",
   production: true,
+  host: "https://site-mercado.azurewebsites.net",
+  googleAnalyticsTag: "G-B104HT07KS",
 };

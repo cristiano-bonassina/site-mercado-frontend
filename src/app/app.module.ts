@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HotToastModule } from "@ngneat/hot-toast";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { NgxGoogleAnalyticsModule } from "ngx-google-analytics";
 import { environment } from "../environments/environment";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -46,6 +47,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatButtonModule,
     MatProgressSpinnerModule,
     MatDialogModule,
+    NgxGoogleAnalyticsModule.forRoot(environment.googleAnalyticsTag),
     HotToastModule.forRoot({ position: "bottom-center" }),
     TranslateModule.forRoot({
       loader: {
