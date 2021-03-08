@@ -21,6 +21,7 @@ export class DialogService {
     this.application.attachView(componentRef.hostView);
 
     const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = false;
     dialogConfig.disableClose = true;
 
     if (this.deviceDetectorService.isMobile()) {
