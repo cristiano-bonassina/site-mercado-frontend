@@ -20,6 +20,9 @@
     "errorLoadingProducts": "Não foi possível carregar a lista de produtos",
     "retry": "Tentar novamente"
   },
+  "productDetailComponent": {
+    "errorSavingProduct": "Não foi possível cadastrar o produto"
+  },
   "productDialog": {
     "addTitle": "Inclusão de produto",
     "editTitle": "Edição de produto"

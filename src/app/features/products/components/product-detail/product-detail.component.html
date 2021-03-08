@@ -13,6 +13,10 @@
                                                 placeholder="valor de venda">
                             </app-currency-input>
                             <div class="mt-8">
+                                   <app-error-message *ngFor="let errorMesssage of errorMesssages"
+                                                      [message]="errorMesssage"></app-error-message>
+                            </div>
+                            <div class="mt-8">
                                    <app-loading-button mat-raised-button
                                                        (click)="saveProductChanges()"
                                                        [showWorkingIndicator]="isSavingChanges"
