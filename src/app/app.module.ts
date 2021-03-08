@@ -24,6 +24,7 @@ import { API_URL } from "./core/api/api.url";
 import { AuthTokenInterceptor } from "./core/api/auth-token-interceptor";
 import { LoginInterceptor } from "./core/api/login-interceptor";
 import { AUTH_URL } from "./core/auth/auth.url";
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 registerLocaleData(localePt);
 
@@ -56,6 +57,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     {
