@@ -36,11 +36,24 @@ export class ProductService {
     return products;
   }
 
-  public async saveProduct(product: Product) {
+  public async createProduct(product: Product) {
     type ApiResponseType = { resourceId: string; version: number };
-    const response = await this.httpClient.post<ApiResponseType>(Resources.v1.product, product).toPromise();
-    product.resourceId = response.resourceId;
-    this.productSaved.next(product);
-    return response;
+    const apiResponse = await this.httpClient.post<ApiResponseType>(Resources.v1.product, product).toPromise();
+    product.resourceId = apiResponse.resourceId;
+    return apiResponse;
+  }
+
+  public async updateProduct(productId: string, productPatch: Partial<Omit<Product, "resourceId">>) {
+    const patchRequest = Object.keys(productPatch).map((key) => {
+      const operation = {
+        op: "replace",
+        path: key,
+        value: (productPatch as any)[key],
+      };
+      return operation;
+    });
+    const endpoint = `${Resources.v1.product}/${productId}`;
+    const apiResponse = await this.httpClient.patch(endpoint, patchRequest).toPromise();
+    return apiResponse;
   }
 }
